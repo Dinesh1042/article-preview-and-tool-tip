@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+body {
+  background-color: hsl(210, 46%, 95%);
+}
+section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+.container {
+  height: 270px;
+  width: 80%;
+  display: flex;
+  max-width: 650px;
+  border-radius: 9px;
+  background-color: #fff;
+  position: relative;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.imgCont {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 9px 0 0 9px;
+  overflow: hidden;
+}
+.imgCont img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.container .textCont {
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.container .textCont .topText h2 {
+  color: hsl(217, 19%, 35%);
+  line-height: normal;
+}
+.centerText {
+  margin: 10px 0;
+}
+.container .textCont .centerText p {
+  color: hsl(214, 17%, 51%);
+}
+.textCont .bottomText {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+}
+.textCont .bottomText .bottomLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.textCont .bottomText .bottomLeft .imgEl {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.textCont .bottomText .bottomLeft .imgEl img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.textCont .bottomText .bottomLeft .nameAndDate {
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  margin-left: 15px;
+}
+.textCont .bottomText .bottomLeft .nameAndDate .name {
+  font-weight: 700;
+  color: hsl(217, 19%, 35%);
+  margin-bottom: 3px;
+}
+.textCont .bottomText .bottomLeft .nameAndDate .date {
+  font-weight: 400;
+  color: hsl(214, 17%, 51%);
+  font-size: 12px;
+}
+.textCont .bottomText .bottomRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.textCont .bottomText .bottomRight .share {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  /* background-color: hsl(217, 19%, 35%); */
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: pointer;
+}
+#shareIcon {
+  display: none;
+}
+.textCont .bottomText .bottomRight .share img {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 50%;
+}
+.textCont .bottomText .bottomRight .share:hover {
+  background-color: hsl(210, 35%, 90%);
+}
+.textCont .bottomText .bottomRight.active .share {
+  background-color: hsl(214, 17%, 51%);
+}
+.textCont .bottomText .bottomRight.active .share img {
+  filter: brightness(11);
+}
+.textCont .bottomText .bottomRight.active .toolTipCont {
+  display: block;
+}
+.toolTipCont {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  display: none;
+}
+.toolTip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background-color: hsl(217, 19%, 35%);
+  border-radius: 4px;
+}
+.toolTip a {
+  margin: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.toolTip a img {
+  user-select: none;
+  -webkit-user-select: none;
+}
+.toolTip a:hover img {
+  filter: invert(0.23);
+}
+.toolTip p {
+  color: #fff;
+  letter-spacing: 4px;
+  font-size: 12px;
+  margin: 0 5px;
+}
+.toolTip::after {
+  content: "";
+  height: 15px;
+  width: 15px;
+  background-color: hsl(217, 19%, 35%);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+@media (max-width: 650px) {
+  .container {
+    height: auto;
+    flex-direction: column;
+  }
+  .container .imgCont {
+    width: 100%;
+    height: 180px;
+    background-color: indianred;
+    max-width: 100%;
+    border-radius: 9px 9px 0 0;
+    overflow: hidden;
+  }
+  .centerText {
+    margin: 15px 0;
+  }
+}
+@media (max-width: 400px) {
+  .toolTipCont {
+    top: 86.5% !important;
+    left: 0 !important;
+    width: 100%;
+    position: absolute;
+  }
+  .toolTip {
+    bottom: 0% !important;
+    height: 70px;
+    width: 100%;
+    border-radius: 0 0 9px 9px;
+  }
+  .toolTip::after {
+    display: none;
+  }
+  #shareIcon {
+    display: flex;
+  }
+}
