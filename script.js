@@ -14,7 +14,7 @@ tooTipPosition();
 
 window.addEventListener("resize", tooTipPosition);
 
-shareEl.addEventListener("click", (e) => {
+shareEl.addEventListener("mouseenter", (e) => {
   bottomRightEl.classList.toggle("active");
   tooTipPosition();
 });
